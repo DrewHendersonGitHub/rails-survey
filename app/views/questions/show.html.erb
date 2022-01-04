@@ -1,0 +1,19 @@
+<h1>Question: <%= @question.name %></h1>
+<h3> <%= @question.question %></h3>
+
+<p><%= link_to "Edit question", edit_survey_question_path(@survey, @question) %></p>
+<p><%= link_to "Delete question", survey_question_path(@survey, @question),
+                        :data => {:confirm => "Are you sure?",
+                                       :method => "delete"} %></p>
+<form id="question">
+<input type="radio" id="answer_1" name="question1" value="1" />
+<label for="answer1">option 1</label>
+<input type="radio" id="answer_2" name="question1" value="2" />
+<label for="answer2">option 2</label>
+<input type="radio" id="answer_3" name="question1" value="3" />
+<label for="answer3">option 3</label>
+<input type="radio" id="answer_4" name="question1" value="4" />
+<label for="answer4">option 4</label>
+</form>
+                                       
+<p><%= link_to "Return to survey", survey_path(@survey) %></p>
